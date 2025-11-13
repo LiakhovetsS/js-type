@@ -69,17 +69,26 @@ console.log(Type.WTF(new Date())); // 'date'
 
 API
 
-- isString(value): boolean
-- isNumber(value): boolean
-- isBoolean(value): boolean
-- isDate(value): boolean
-- isFunction(value): boolean
-- isArray(value): boolean
-- isObject(value): boolean
-- isUndefined(value): boolean
-- isNull(value): boolean
-- isRegExp(value): boolean
-- WTF(value): string — returns the exact runtime type, e.g. 'array', 'date', 'regexp', 'null', 'undefined' ✅
+| Function            | Description                                                                                       | Returns   |
+|---------------------|---------------------------------------------------------------------------------------------------|----------:|
+| isString(value)     | Checks if value is a string (primitive or String object)                                          |   boolean |
+| isNumber(value)     | Checks if value is a number (primitive or Number object)                                          |   boolean |
+| isBoolean(value)    | Checks if value is a boolean                                                                      |   boolean |
+| isDate(value)       | Checks if value is a Date instance                                                                |   boolean |
+| isFunction(value)   | Checks if value is a function                                                                     |   boolean |
+| isArray(value)      | Checks if value is an Array                                                                       |   boolean |
+| isObject(value)     | Checks if value is a plain Object ("[object Object]")                                             |   boolean |
+| isUndefined(value)  | Checks if value is undefined                                                                      |   boolean |
+| isNull(value)       | Checks if value is null                                                                           |   boolean |
+| isRegExp(value)     | Checks if value is a RegExp instance                                                              |   boolean |
+| isMap(value)        | Checks if value is a Map instance                                                                 |   boolean |
+| isSet(value)        | Checks if value is a Set instance                                                                 |   boolean |
+| isSymbol(value)     | Checks if value is a Symbol                                                                       |   boolean |
+| isError(value)      | Checks if value is an Error instance                                                              |   boolean |
+| isBigInt(value)     | Checks if value is a BigInt                                                                       |   boolean |
+| isArguments(value)  | Checks if value is an arguments object                                                            |   boolean |
+| isTypedArray(value) | Checks if value is a TypedArray (e.g., Int8Array, Uint8Array)                                     |   boolean |
+| WTF(value)          | Returns the runtime type string (lowercased, e.g. 'array', 'date', 'regexp', 'null', 'undefined') |    string |
 
 Each boolean function returns whether the runtime value matches the check. `WTF` returns the runtime type string (lowercased) using `Object.prototype.toString.call(value)` for highest accuracy.
 
